@@ -17,6 +17,7 @@
 
 ### POST /api/login
 **用途：使用者登入，成功後回傳一組 Token 供後續 API 認證使用。**
+
 請求格式（JSON）：
 ```
 {
@@ -44,6 +45,7 @@
 ### GET /api/events
 **支援 include 參數（可選）：user, attendees, attendees.user**
 **用途：查看所有event的資料**
+
 成功回應（有帶入user參數）：
 ```
 {
@@ -84,6 +86,7 @@
 
 ### POST /api/events
 **用途：新增指定User的一筆Event的資料(需要Bearer Token驗證)**
+
 請求格式（JSON）：
 ```
 {
@@ -109,6 +112,7 @@
 ### GET /api/events/{event}
 **支援 include 參數（可選）：'user', 'attendees', 'attendees.user'**
 **用途：查看特定Event的資料**
+
 成功回應：
 ```
 {
@@ -124,6 +128,7 @@
 
 ### PUT /api/events/{event}
 **用途：更改指定User的一筆Event的資料(需要Bearer Token驗證)**
+
 請求格式（JSON）：
 ```
 {
@@ -148,12 +153,14 @@
 
 ### DELETE /api/events/{event}
 **用途：刪除指定User的一筆Event的資料(需要Bearer Token驗證)**
+
 成功回應 HTTP 204（No Content）：
 
 ---
 ### GET /api/events/{event}/attendees
 **支援 include 參數（可選）：'user'**
 **用途：查看指定event的下所有attendee的資料**
+
 成功回應：
 ```
 {
@@ -178,6 +185,7 @@
 
 ### POST /api/events/{event}/attendees
 **用途：新增User的attendees進入該event(需要Bearer Token驗證)**
+
 請求格式（JSON）：
 ```
 {
@@ -201,6 +209,7 @@
 ### GET /api/events/{event}/attendees/{attendee}
 **支援 include 參數（可選）：'user'**
 **用途：查看特定Event下的指定attendee資料**
+
 成功回應：
 ```
 {
@@ -216,4 +225,5 @@
 
 ### DELETE /api/events/{event}/attendees/{attendee}
 **用途：刪除指定User的一筆attendee的資料(需要Bearer Token驗證)**
+
 成功回應 HTTP 204（No Content）：
